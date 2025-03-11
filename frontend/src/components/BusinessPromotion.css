@@ -1,0 +1,11 @@
+.header {
+  /* background-color: #f8f9fa; */
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 0%;
+}
+
+.posts-container {
+  padding: 20px; /* Padding for the posts container */
+}

@@ -1,0 +1,114 @@
+/* General container styles */
+.business-search-container {
+  padding-top: 120px; /* To avoid content getting hidden under the fixed header */
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* background-color: white; */
+  padding: 20px 40px; /* Adjust padding to add space on the sides */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Header layout divided into three parts */
+.header-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;  /* Reduce padding to bring the button closer */
+}
+
+/* Header title styling */
+.business-title {
+  font-size: 28px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Add Business button styling */
+.add-business-button {
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-bottom: 33px;
+}
+
+.add-business-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Suggestions dropdown styling */
+.suggestion-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 300px;
+  background: white;
+  border: 1px solid #ddd;
+  position: absolute;
+  z-index: 1001;
+}
+
+.suggestion-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion-list li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Business cards container styling */
+.business-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Add space between the header and the business cards */
+.business-cards > * {
+  margin-top: 20px;
+}

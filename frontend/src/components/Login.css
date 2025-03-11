@@ -1,0 +1,109 @@
+/* Login.css */
+
+body {
+    background: url(https://wallpaperaccess.com/full/4893706.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 115vh;
+    margin: 0;
+}
+.login-container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    margin-top: 20px; /* Adjust top margin to add space above the form */
+    margin-bottom: 20px; /* Adjust bottom margin to add space below the form */
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgb(14 4 4 / 10%);
+    color: #0b0303;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+input:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+input:focus {
+    outline: none;
+    background-color: rgba(255,255,255,0.3);
+    box-shadow: inset 0px -2px 8px rgba(255,255,255,0.5);
+    transform: scale(1.02); /* Slightly enlarge input on focus */
+}
+
+/* Unified button styles */
+.button-container {
+    display: flex;            /* Use flexbox */
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 11px;       /* Maintain top margin */
+}
+
+button {
+    width: 58%;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    background-color: #2a9d8f;
+    border: none;
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Hover effects for buttons */
+button:hover {
+   background-color:#1e827a; /* Darker shade on hover */
+   transform: translateY(-2px) scale(1.05); /* Lift effect with slight scale */
+   box-shadow: rgba(255,255,255,.2) -4px -4px 15px; /* Light shadow effect on hover */
+}
+
+/* Success message styles */
+.success-message {
+   margin-top: 20px; /* Space above the message */
+   font-size: 20px; /* Font size for the message */
+   color: #4dd0e1; /* Color for visibility */
+   opacity: 1; /* Fully visible by default */
+   animation: fadeIn .5s forwards; /* Fade-in animation */
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+   from { opacity: 0; }
+   to { opacity: 1; }
+}

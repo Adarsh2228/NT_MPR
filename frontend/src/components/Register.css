@@ -1,0 +1,86 @@
+/* Register.css */
+
+body {
+    background-color: #282c34; /* Fallback background color */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Register container styling */
+.register-container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.register-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.input-container {
+    margin-bottom: 20px; /* Space between input fields */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transform transition */
+}
+
+input:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0px -2px 8px rgba(255, 255, 255, 0.5);
+    transform: scale(1.02); /* Slightly enlarge input on focus */
+}
+
+/* Unified button styles */
+button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px; /* Space between buttons */
+    
+    background-color: #2a9d8f; /* Common button color */
+    border: none; /* No border for default state */
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; /* Smooth transition for background color */
+}
+
+/* Hover effects for buttons */
+button:hover {
+    background-color: #1e827a; /* Darker shade on hover */
+    transform: translateY(-2px) scale(1.05); /* Lift effect with slight scale */
+    box-shadow: rgba(255, 255, 255, .2) -4px -4px 15px; /* Light shadow effect on hover */
+}

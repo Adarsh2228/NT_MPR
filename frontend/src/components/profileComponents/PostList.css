@@ -1,0 +1,79 @@
+/* Post Grid */
+.post-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Post Card */
+.post-card {
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.post-card:hover {
+    transform: scale(1.05);
+}
+
+/* Post Media */
+.post-thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Actions */
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.action-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.liked {
+    color: red;
+    animation: pop 0.3s;
+}
+
+/* Comment Section */
+.comment-section {
+    padding: 10px;
+    background: white;
+}
+
+/* Full Post View */
+.full-post-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-post-content img,
+.full-post-content video {
+    width: 90%;
+    max-height: 90vh;
+}
+.comment {
+    color: black;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  

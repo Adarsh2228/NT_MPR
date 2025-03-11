@@ -1,0 +1,56 @@
+// const express = require('express');
+// const { createPost, getPostsByBusiness, getAllPosts } = require('../controllers/postController');
+// const router = express.Router();
+// const multer = require('multer');
+
+// // Set up storage for multer
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, 'uploads/');
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, Date.now() + '-' + file.originalname);
+//   },
+// });
+
+// const upload = multer({ storage });
+
+// // Route to create a post (with file upload)
+// router.post('/', upload.single('media'), createPost);
+
+// // Route to get all posts
+// router.get('/', getAllPosts); // New route for getting all posts
+
+// // Route to get posts by business ID
+// router.get('/business/:id', getPostsByBusiness);
+
+// module.exports = router;
+
+
+const express = require("express");
+const router = express.Router();
+const postController = require("../controllers/postController");
+const multer = require("multer");
+
+// Set up storage for multer
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage });
+
+// Route to create a post (with file upload)
+router.post("/", upload.single("media"), postController.createPost);
+
+// Route to get all posts
+router.get("/", postController.getAllPosts);
+
+// Route to get posts by business ID
+router.get("/business/:id", postController.getPostsByBusiness);
+
+module.exports = router;

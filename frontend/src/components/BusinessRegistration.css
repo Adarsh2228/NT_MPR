@@ -1,0 +1,124 @@
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5), 0 0 10px rgba(0, 123, 255, 0.4), 0 0 15px rgba(0, 123, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.7), 0 0 20px rgba(0, 123, 255, 0.6), 0 0 30px rgba(0, 123, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5), 0 0 10px rgba(0, 123, 255, 0.4), 0 0 15px rgba(0, 123, 255, 0.3);
+    }
+}
+
+.registration-container {
+    max-width: 819px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 1100px;
+    animation: glow 2s infinite; /* Add glowing animation */
+}
+
+  
+  h2 {
+    text-align: center; /* Center the heading */
+    color: #333; /* Dark text color */
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 28px; /* Increased font size */
+  }
+  
+  .form-grid {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between grid items */
+    margin-bottom: 20px; /* Space below the grid */
+  }
+  
+  .label {
+    font-weight: bold;
+    color: #0b0303;
+}
+
+input, select, textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+  width: 276px;
+}
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.6); /* Add shadow on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  .submit-button {
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    padding: 12px; /* Add padding */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 18px; /* Increased font size */
+    transition: background-color 0.3s, transform 0.3s; /* Transition for hover effects */
+    margin-top: 20px; /* Space above button */
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3; /* Darken button on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  }
+  
+  .submit-button:active {
+    transform: translateY(0); /* Reset position when clicked */
+  }
+  
+  textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 23px; /* Set a minimum height for textareas */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 640px) {
+    .registration-container {
+      padding: 20px; /* Adjust padding for smaller screens */
+      margin: 20px; /* Adjust margin for smaller screens */
+    }
+  
+    h2 {
+      font-size: 24px; /* Adjust heading size */
+    }
+  
+    .form-grid {
+      grid-template-columns: 1fr; /* Stack vertically on small screens */
+    }
+  
+    .submit-button {
+      font-size: 16px; /* Adjust button size */
+    }
+  }
+  .submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px; /* Adjust padding for smaller button size */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px; /* Slightly reduce font size */
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 20px auto; /* Center the button with auto margins */
+    display: block; /* Make button a block element for centering */
+    width: 300px; /* Set a smaller width for the button */
+}
+
+.registration-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+}
