@@ -25,7 +25,11 @@
 
 .post-list-section {
   position: absolute;
+<<<<<<< HEAD
   top: 91%;
+=======
+  top: 96%;
+>>>>>>> 022ac89 (ADARSH_ commit)
   right: 1%;
   transform: translateY(-50%);
   padding: 20px;

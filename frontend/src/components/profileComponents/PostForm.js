@@ -32,6 +32,12 @@
 // };
 
 // export default PostForm;
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 022ac89 (ADARSH_ commit)
 import React from 'react';
 
 const PostForm = ({ content, setContent, mediaPreview, handleMediaChange, handlePostSubmit, businessCategory }) => {

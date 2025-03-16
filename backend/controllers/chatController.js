@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // const Chat = require("../models/Chat");
 // const mongoose = require("mongoose");
 
@@ -283,10 +284,17 @@ const mongoose = require("mongoose");
 
 // Send a message
 // Updated sendMessage controller
+=======
+const ChatMessage = require("../models/ChatMessage");
+const ChatRequest = require("../models/ChatRequest");
+
+// Send a message and create/update a chat request
+>>>>>>> 022ac89 (ADARSH_ commit)
 exports.sendMessage = async (req, res) => {
   try {
     const { senderId, receiverId, message, senderName } = req.body;
 
+<<<<<<< HEAD
     // Validate request body
     const missingFields = [];
     if (!senderId) missingFields.push('senderId');
@@ -302,10 +310,15 @@ exports.sendMessage = async (req, res) => {
 
     // Create and save message
     const newMessage = new Chat({
+=======
+    // Save the message
+    const newMessage = new ChatMessage({
+>>>>>>> 022ac89 (ADARSH_ commit)
       senderId,
       receiverId,
       message,
       senderName,
+<<<<<<< HEAD
       timestamp: new Date()
     });
 
@@ -355,10 +368,50 @@ exports.getChatHistory = async (req, res) => {
 
     // Fetch messages
     const messages = await Chat.find({
+=======
+    });
+    await newMessage.save();
+
+    // Create or update the chat request
+    let chatRequest = await ChatRequest.findOne({
+      userId: senderId,
+      businessId: receiverId,
+    });
+
+    if (!chatRequest) {
+      chatRequest = new ChatRequest({
+        userId: senderId,
+        businessId: receiverId,
+        lastMessage: message,
+      });
+    } else {
+      chatRequest.lastMessage = message;
+      chatRequest.updatedAt = Date.now();
+    }
+
+    await chatRequest.save();
+
+    // Emit the new message via WebSocket
+    const io = req.app.get("io");
+    io.emit("newMessage", newMessage);
+
+    res.status(201).json(newMessage);
+  } catch (error) {
+    res.status(500).json({ message: "Error sending message", error });
+  }
+};
+
+// Get chat history between two users
+exports.getChatHistory = async (req, res) => {
+  try {
+    const { userId, businessId } = req.params;
+    const messages = await ChatMessage.find({
+>>>>>>> 022ac89 (ADARSH_ commit)
       $or: [
         { senderId: userId, receiverId: businessId },
         { senderId: businessId, receiverId: userId },
       ],
+<<<<<<< HEAD
     }).sort({ timestamp: 1 });
 
     res.status(200).json(messages);
@@ -396,5 +449,24 @@ exports.getChatRequests = async (req, res) => {
   } catch (error) {
     console.error("Error fetching chat requests:", error);
     res.status(500).json({ error: "Failed to fetch chat requests" });
+=======
+    }).sort({ createdAt: 1 });
+    res.status(200).json(messages);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching chat history", error });
+  }
+};
+
+// Get chat requests for a business
+exports.getChatRequests = async (req, res) => {
+  try {
+    const { businessId } = req.params;
+    const chatRequests = await ChatRequest.find({ businessId }).sort({
+      updatedAt: -1,
+    });
+    res.status(200).json(chatRequests);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching chat requests", error });
+>>>>>>> 022ac89 (ADARSH_ commit)
   }
 };

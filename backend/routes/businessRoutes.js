@@ -14,10 +14,17 @@
 const express = require('express');
 const router = express.Router();
 const businessController = require('../controllers/businessController');
+<<<<<<< HEAD
 const authMiddleware = require('../middleware/authMiddleware'); // Import the middleware
 
 // Route to register a business (protected route)
 router.post('/register', authMiddleware, businessController.registerBusiness);
+=======
+// const authMiddleware = require('../middleware/authMiddleware'); // Import the middleware
+
+// Route to register a business (protected route)
+router.post('/register', businessController.registerBusiness);
+>>>>>>> 022ac89 (ADARSH_ commit)
 
 // Route to fetch all businesses
 router.get('/', businessController.getAllBusinesses);
@@ -29,6 +36,7 @@ router.get('/:id', businessController.getBusinessProfile);
 router.get('/name/:name', businessController.getBusinessByName);
 
 // Route to follow a business (protected route)
+<<<<<<< HEAD
 router.post('/:id/follow', authMiddleware, businessController.followBusiness);
 
 // Route to create a post for a business (protected route)
@@ -36,6 +44,15 @@ router.post('/:id/posts', authMiddleware, businessController.createPost);
 
 // Route to create an order for a business (protected route)
 router.post('/:id/orders', authMiddleware, businessController.createOrder);
+=======
+router.post('/:id/follow',  businessController.followBusiness);
+
+// Route to create a post for a business (protected route)
+router.post('/:id/posts',  businessController.createPost);
+
+// Route to create an order for a business (protected route)
+router.post('/:id/orders', businessController.createOrder);
+>>>>>>> 022ac89 (ADARSH_ commit)
 
 module.exports = router;
 

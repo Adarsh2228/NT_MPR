@@ -10,10 +10,17 @@
 .chat-page {
   display: flex
 ;
+<<<<<<< HEAD
   height: 75vh;
   background-color: #f5f5f5;
   font-family: 'Arial', sans-serif;
   width: 71vw;
+=======
+  height: 89vh;
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  width: 84vw;
+>>>>>>> 022ac89 (ADARSH_ commit)
   background-color: rgb(12, 188, 126);
 }
 .sidebar-title {
@@ -202,4 +209,83 @@
     opacity: 1;
     transform: translateY(0);
   }
+<<<<<<< HEAD
+=======
+}/* Chat Messages Section */
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Sent Message (Business) */
+.sent {
+  align-self: flex-end;
+  background-color: #007bff; /* Blue background for sent messages */
+  color: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  max-width: 70%;
+  position: relative;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Received Message (User) */
+.received {
+  align-self: flex-start;
+  background-color: #ffffff; /* White background for received messages */
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 12px;
+  max-width: 70%;
+  position: relative;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Timestamp for Messages */
+.sent::after,
+.received::after {
+  content: attr(data-timestamp);
+  display: block;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7); /* Light text for sent messages */
+  margin-top: 4px;
+  text-align: right;
+}
+
+.received::after {
+  color: rgba(0, 0, 0, 0.5); /* Dark text for received messages */
+  text-align: left;
+}
+
+/* Scrollbar Styling */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #999;
+>>>>>>> 022ac89 (ADARSH_ commit)
 }

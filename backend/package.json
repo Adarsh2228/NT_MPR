@@ -10,6 +10,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@socket.io/component-emitter": "^3.1.2",
+>>>>>>> 022ac89 (ADARSH_ commit)
     "@tensorflow/tfjs": "^4.21.0",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
