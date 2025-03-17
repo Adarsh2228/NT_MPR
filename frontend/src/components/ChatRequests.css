@@ -1,8 +1,9 @@
 /* Chat Page Container */
 .chat-page {
-  display: flex;
+  display: flex
+;
   height: 100vh;
-  background: linear-gradient(135deg, #f9f9f9, #e6f4f1);
+  background: linear-gradient(135deg, #9438b61a, #139c7e80);
   font-family: 'Arial', sans-serif;
 }
 
